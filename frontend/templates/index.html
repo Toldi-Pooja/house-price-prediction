@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏠 AI House Price Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-home"></i> AI House Price Predictor</h1>
+      <p>Get instant price estimates for your dream home</p>
+    </div>
+
+    <form id="prediction-form">
+      <div class="form-group">
+        <label for="qual"><i class="fas fa-star"></i> Overall Quality (1-10)</label>
+        <input type="number" class="form-control" id="qual" min="1" max="10" required>
+      </div>
+
+      <div class="form-group">
+        <label for="area"><i class="fas fa-ruler-combined"></i> Living Area (sq ft)</label>
+        <input type="number" class="form-control" id="area" required>
+      </div>
+
+      <div class="form-group">
+        <label for="beds"><i class="fas fa-bed"></i> Bedrooms</label>
+        <input type="number" class="form-control" id="beds" min="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="baths"><i class="fas fa-bath"></i> Bathrooms</label>
+        <input type="number" class="form-control" id="baths" min="1" step="0.5" required>
+      </div>
+
+      <div class="form-group">
+        <label for="year"><i class="fas fa-calendar-alt"></i> Year Built</label>
+        <input type="number" class="form-control" id="year" min="1900" max="2025" required>
+      </div>
+      <div class="form-group">
+  <label for="garage"><i class="fas fa-car"></i> Garage Cars (0-4)</label>
+  <input type="number" class="form-control" id="garage" min="0" max="4" value="1" required>
+</div>
+
+<div class="form-group">
+  <label for="neighborhood"><i class="fas fa-map-marker-alt"></i> Neighborhood</label>
+  <select class="form-control" id="neighborhood" required>
+    <option value="0">Downtown</option>
+    <option value="1">Suburb</option>
+    <option value="2">Rural</option>
+  </select>
+</div>
+      <button type="submit" class="btn">
+        <i class="fas fa-calculator"></i> Predict Price
+      </button>
+    </form>
+
+    <div id="result" class="alert" style="display: none;"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
