@@ -30,3 +30,25 @@ pip install -r backend/requirements.txt
 
 # 3. Run the application
 python backend/app.py
+
+## � Local Setup
+```bash
+git clone https://github.com/Toldi-Pooja/house-price-prediction.git
+cd house-price-prediction
+pip install -r backend/requirements.txt
+python backend/app.py
+
+📊 Performance Metrics
+Metric	Value
+R² Score	0.89
+MAE	$12,500# Stage the untracked files
+git add backend/README.md house_price_model.pkl train.csv
+
+# Verify what will be committed
+git status
+
+# Commit the files
+git commit -m "Add model, dataset, and backend README"
+
+# Push to GitHub
+git push origin main
